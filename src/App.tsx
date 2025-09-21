@@ -1,24 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Navigation, { PageType } from './components/Navigation';
+import LeaderboardPage from './components/LeaderboardPage';
+import IncentivePage from './components/IncentivePage';
+import PayoutsPage from './components/PayoutsPage';
 import './App.css';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState<PageType>('leaderboard');
+
+  const renderCurrentPage = () => {
+    switch (currentPage) {
+      case 'leaderboard':
+        return <LeaderboardPage />;
+      case 'incentive':
+        return <IncentivePage />;
+      case 'payouts':
+        return <PayoutsPage />;
+      default:
+        return <LeaderboardPage />;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="app-container">
+      <Navigation 
+        currentPage={currentPage} 
+        onPageChange={setCurrentPage} 
+      />
+      {renderCurrentPage()}
+      
+      {/* Footer */}
+      <footer className="footer">
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Powered by{' '}
+          <a
+            href="https://gas.bitmind.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            Bitmind AI Detection API
+          </a>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p className="footer-subtitle">
+          Real-time leaderboards update every 60 seconds
+        </p>
+      </footer>
     </div>
   );
 }
