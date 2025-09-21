@@ -79,10 +79,12 @@ const LeaderboardPage: React.FC = () => {
         )}
       </div>
       
-      <MatchupCard 
-        matchups={[]} 
-        loading={isLoading}
-      />
+      {activeTab === 'generators' && (
+        <MatchupCard 
+          matchups={[]} 
+          loading={isLoading}
+        />
+      )}
     </div>
   );
 };

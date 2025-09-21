@@ -800,6 +800,308 @@ code {
   font-weight: 600;
 }
 
+/* Incentive Page Styles */
+.incentive-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.math-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.subsection-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Formula Styling */
+.formula-container {
+  background: rgba(125, 211, 252, 0.05);
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.formula-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.formula {
+  font-family: 'Courier New', monospace;
+  font-size: 1.125rem;
+  color: var(--accent-blue);
+  text-align: center;
+  margin: 1rem 0;
+  line-height: 1.8;
+}
+
+.fraction {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0 0.25rem;
+}
+
+.numerator {
+  border-bottom: 1px solid var(--accent-blue);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.denominator {
+  padding-top: 0.25rem;
+}
+
+.formula-legend {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.formula-legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.formula-legend li {
+  color: var(--text-secondary);
+  margin: 0.25rem 0;
+  padding-left: 1rem;
+}
+
+.formula-step {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
+
+.final-score {
+  border: 2px solid var(--accent-blue);
+  background: rgba(125, 211, 252, 0.1);
+}
+
+/* Classification Categories */
+.classification-categories {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.category {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.category.real {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.category.ai {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.category.inpainting {
+  background: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* Reward Structure */
+.reward-structure {
+  margin-top: 2rem;
+}
+
+.reward-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.reward-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.reward-details h4 {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.reward-details p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.winner-take-all {
+  border-left: 4px solid #fbbf24;
+}
+
+.ema-distribution {
+  border-left: 4px solid var(--accent-blue);
+}
+
+.ema-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ema-benefits li {
+  color: var(--text-secondary);
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.ema-benefits li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-blue);
+  font-weight: bold;
+}
+
+.time-window {
+  background: rgba(125, 211, 252, 0.1);
+  border: 1px solid rgba(125, 211, 252, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--accent-blue);
+  font-weight: 500;
+}
+
+/* Summary Section */
+.summary-section {
+  background: linear-gradient(135deg, rgba(125, 211, 252, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%);
+  border: 2px solid rgba(125, 211, 252, 0.3);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.summary-card {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.summary-card h3 {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.summary-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.summary-card li {
+  color: var(--text-secondary);
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.discriminator-summary li::before {
+  content: "🛡️";
+  position: absolute;
+  left: 0;
+}
+
+.generator-summary li::before {
+  content: "🎯";
+  position: absolute;
+  left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .math-section {
+    padding: 1.5rem;
+  }
+  
+  .formula {
+    font-size: 1rem;
+  }
+  
+  .classification-categories {
+    flex-direction: column;
+  }
+  
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .reward-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .incentive-content {
+    padding: 0 0.5rem;
+  }
+}
+
 /* Loading States */
 .table-loading {
   padding: 1rem;
