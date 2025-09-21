@@ -1,46 +1,90 @@
-# Getting Started with Create React App
+# BitMind GAS Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A real-time leaderboard dashboard for BitMind AI Detection system, displaying discriminator and generator performance metrics.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- 🏆 **Real-time Leaderboards**: Live discriminator and generator rankings
+- 📊 **Interactive Filtering**: Filter by modality, attempts, and display limits
+- 🎯 **Performance Metrics**: Detailed scoring and performance analytics
+- 💰 **Incentive Tracking**: Coming soon - reward mechanism details
+- 💳 **Payout History**: Coming soon - transparent payment tracking
+- 📱 **Responsive Design**: Works on desktop, tablet, and mobile
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Frontend**: React 19 with TypeScript
+- **Styling**: Custom CSS with dark theme
+- **API**: Axios for HTTP requests
+- **Icons**: Lucide React
+- **Deployment**: Vercel
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Development
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js 18+
+- npm or yarn
 
-### `npm run build`
+### Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone <your-repo-url>
+cd gas-dashboard
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Start development server
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Build for Production
 
-## Learn More
+```bash
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is configured for easy deployment on Vercel:
+
+1. Push your code to GitHub
+2. Connect your GitHub repository to Vercel
+3. Vercel will automatically detect it's a React app and deploy it
+4. The `vercel.json` configuration ensures proper routing and caching
+
+### Environment Variables
+
+No environment variables are required for basic functionality. The app connects to the BitMind API at `https://gas.bitmind.ai`.
+
+## API Integration
+
+The dashboard connects to the BitMind GAS API endpoints:
+
+- `/api/v1/analytics/leaderboard` - Discriminator leaderboard
+- `/api/v1/analytics/generator-leaderboard` - Generator leaderboard
+- `/api/v1/analytics/system-stats` - System statistics
+- `/api/v1/analytics/discriminator/{id}/detailed-stats` - Detailed discriminator stats
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is private and proprietary to BitMind.
