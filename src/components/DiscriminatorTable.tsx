@@ -7,6 +7,7 @@ import {
   truncateAddress,
   getRankEmoji,
   getPerformanceColor,
+  formatModelEvaluations,
 } from '../utils/formatting';
 
 interface DiscriminatorTableProps {
@@ -54,7 +55,7 @@ const DiscriminatorTable: React.FC<DiscriminatorTableProps> = memo(({ data, load
               <th className="table-header">Combined Score</th>
               <th className="table-header">Image Score</th>
               <th className="table-header">Video Score</th>
-              <th className="table-header">Runs</th>
+              <th className="table-header">Evaluations</th>
               <th className="table-header">Last Active</th>
             </tr>
           </thead>
@@ -116,7 +117,7 @@ const DiscriminatorTable: React.FC<DiscriminatorTableProps> = memo(({ data, load
                   <td className="table-cell">
                     <div className="runs-display">
                       <Trophy className="runs-icon" />
-                      <span>{entry.total_runs}</span>
+                      <span>{formatModelEvaluations(entry.total_runs)}</span>
                     </div>
                   </td>
                   

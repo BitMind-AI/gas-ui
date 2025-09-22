@@ -98,37 +98,17 @@ class BitMindApiClient {
   }
 
   /**
-   * Get filtered discriminator leaderboard based on modality
+   * Get filtered discriminator leaderboard
    */
   async getFilteredDiscriminatorLeaderboard(filters: FilterState): Promise<DiscriminatorEntry[]> {
-    const data = await this.getDiscriminatorLeaderboard(filters.limit);
-    
-    // Client-side filtering by modality if needed
-    // Note: The API doesn't seem to support modality filtering directly,
-    // so we'll filter based on scores being > 0
-    if (filters.modality === 'image') {
-      return data.filter(entry => entry.image_score > 0);
-    } else if (filters.modality === 'video') {
-      return data.filter(entry => entry.video_score > 0);
-    }
-    
-    return data;
+    return await this.getDiscriminatorLeaderboard(filters.limit);
   }
 
   /**
    * Get filtered generator leaderboard
    */
   async getFilteredGeneratorLeaderboard(filters: FilterState): Promise<GeneratorEntry[]> {
-    let data = await this.getGeneratorLeaderboard(filters.limit, filters.minAttempts);
-    
-    // Filter by modality
-    if (filters.modality !== 'all') {
-      data = data.filter(entry => 
-        entry.modalities.includes(filters.modality)
-      );
-    }
-    
-    return data;
+    return await this.getGeneratorLeaderboard(filters.limit, 1);
   }
 }
 

@@ -76,8 +76,6 @@ export interface DiscriminatorDetailedStats {
 
 // Filter and UI Types
 export interface FilterState {
-  modality: 'all' | 'image' | 'video';
-  minAttempts: number;
   limit: number;
 }
 
@@ -101,5 +99,3 @@ export type LoadingState = 'idle' | 'loading' | 'success' | 'error';
 // Leaderboard Type Union
 export type LeaderboardType = 'discriminator' | 'generator';
 
-// Modality Types
-export type Modality = 'image' | 'video' | 'all';

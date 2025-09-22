@@ -135,3 +135,11 @@ export const getWinnerBadge = (winner: 'generator' | 'discriminator'): { emoji: 
     };
   }
 };
+
+/**
+ * Convert total runs to model evaluations
+ * Each model evaluation creates 2 runs (1 image + 1 video)
+ */
+export const formatModelEvaluations = (totalRuns: number): number => {
+  return Math.floor(totalRuns / 2);
+};

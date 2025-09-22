@@ -3,23 +3,10 @@
 export const REFRESH_INTERVAL = 60000; // 60 seconds
 
 export const DEFAULT_FILTERS = {
-  modality: 'all' as const,
-  minAttempts: 1,
   limit: 50,
 };
 
 export const FILTER_OPTIONS = {
-  modality: [
-    { value: 'all', label: 'All Modalities' },
-    { value: 'image', label: 'Image Only' },
-    { value: 'video', label: 'Video Only' },
-  ],
-  minAttempts: [
-    { value: 1, label: '1+ Attempts' },
-    { value: 2, label: '2+ Attempts' },
-    { value: 3, label: '3+ Attempts' },
-    { value: 5, label: '5+ Attempts' },
-  ],
   limit: [
     { value: 10, label: 'Top 10' },
     { value: 25, label: 'Top 25' },
