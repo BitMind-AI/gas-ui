@@ -11,11 +11,8 @@ import {
 class BitMindApiClient {
   private client: AxiosInstance;
   private baseURL = 'https://gas.bitmind.ai';
-  private apiKey: string | undefined;
 
   constructor() {
-    this.apiKey = process.env.REACT_APP_ANALYTICS_API_KEY;
-    
     this.client = axios.create({
       baseURL: this.baseURL,
       timeout: 10000,
@@ -23,20 +20,6 @@ class BitMindApiClient {
         'Content-Type': 'application/json',
       },
     });
-
-    // Add request interceptor to include API key for analytics endpoints
-    this.client.interceptors.request.use(
-      (config) => {
-        // Check if this is an analytics endpoint
-        if (config.url?.includes('/api/v1/analytics/') && this.apiKey) {
-          config.headers['X-API-Key'] = this.apiKey;
-        }
-        return config;
-      },
-      (error) => {
-        return Promise.reject(error);
-      }
-    );
 
     // Add response interceptor for error handling
     this.client.interceptors.response.use(
@@ -46,13 +29,6 @@ class BitMindApiClient {
           message: error.response?.data?.message || error.message || 'An error occurred',
           status: error.response?.status,
         };
-        
-        // Special handling for 401 errors (API key issues)
-        if (error.response?.status === 401) {
-          console.error('API key missing or invalid. Please check REACT_APP_ANALYTICS_API_KEY environment variable.');
-          apiError.message = 'Authentication failed. API key required for analytics access.';
-        }
-        
         return Promise.reject(apiError);
       }
     );

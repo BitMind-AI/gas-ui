@@ -41,21 +41,13 @@ cd gas-dashboard
 npm install
 ```
 
-3. Create environment file
-
-Create a `.env` file in the root directory with:
-
-```
-REACT_APP_ANALYTICS_API_KEY=gas-JNtN0rEkNKZwsPFlnpb7mnQFCAlixpzpmeGcEBo1vsqt1O7renbObrEm1b1g
-```
-
-4. Start development server
+3. Start development server
 
 ```bash
 npm start
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ### Build for Production
 
@@ -74,15 +66,7 @@ This project is configured for easy deployment on Vercel:
 
 ### Environment Variables
 
-The following environment variable is required:
-
-- `REACT_APP_ANALYTICS_API_KEY`: API key for accessing BitMind analytics endpoints
-
-Create a `.env` file in the root directory:
-
-```
-REACT_APP_ANALYTICS_API_KEY=gas-JNtN0rEkNKZwsPFlnpb7mnQFCAlixpzpmeGcEBo1vsqt1O7renbObrEm1b1g
-```
+No environment variables are required. The BitMind API is publicly accessible.
 
 ## API Integration
 

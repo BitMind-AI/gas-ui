@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Shield, Target, Activity, TrendingUp } from 'lucide-react';
 import { SystemStats } from '../types/api';
 import { formatNumber } from '../utils/formatting';
@@ -9,7 +9,7 @@ interface StatsOverviewProps {
   loading: boolean;
 }
 
-const StatsOverview: React.FC<StatsOverviewProps> = ({ stats, lastUpdated, loading }) => {
+const StatsOverview: React.FC<StatsOverviewProps> = memo(({ stats, lastUpdated, loading }) => {
   if (loading) {
     return (
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
@@ -105,6 +105,8 @@ const StatsOverview: React.FC<StatsOverviewProps> = ({ stats, lastUpdated, loadi
 
     </div>
   );
-};
+});
+
+StatsOverview.displayName = 'StatsOverview';
 
 export default StatsOverview;

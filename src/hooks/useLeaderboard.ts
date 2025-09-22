@@ -26,7 +26,7 @@ export const useLeaderboard = (filters: FilterState = DEFAULT_FILTERS) => {
     try {
       if (MOCK_DATA_ENABLED) {
         // Use mock data in development
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate network delay
+        await new Promise(resolve => setTimeout(resolve, 500)); // Reduced delay
         setDiscriminators(MOCK_DISCRIMINATORS);
         setGenerators(MOCK_GENERATORS);
         setStats(MOCK_STATS);
@@ -50,7 +50,7 @@ export const useLeaderboard = (filters: FilterState = DEFAULT_FILTERS) => {
       setError(err as ApiError);
       setLoadingState('error');
     }
-  }, [filters]);
+  }, [filters]); // ESLint requires the full filters object
 
   const refetch = useCallback(() => {
     fetchData();

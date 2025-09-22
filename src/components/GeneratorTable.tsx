@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Clock, Target, TrendingUp, TrendingDown } from 'lucide-react';
 import { GeneratorEntry } from '../types/api';
 import {
@@ -14,7 +14,7 @@ interface GeneratorTableProps {
   loading: boolean;
 }
 
-const GeneratorTable: React.FC<GeneratorTableProps> = ({ data, loading }) => {
+const GeneratorTable: React.FC<GeneratorTableProps> = memo(({ data, loading }) => {
   if (loading) {
     return (
       <div className="table-container">
@@ -154,6 +154,8 @@ const GeneratorTable: React.FC<GeneratorTableProps> = ({ data, loading }) => {
       </div>
     </div>
   );
-};
+});
+
+GeneratorTable.displayName = 'GeneratorTable';
 
 export default GeneratorTable;

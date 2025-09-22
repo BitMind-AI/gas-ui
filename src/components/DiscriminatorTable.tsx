@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Clock, Trophy } from 'lucide-react';
 import { DiscriminatorEntry } from '../types/api';
 import {
@@ -14,7 +14,7 @@ interface DiscriminatorTableProps {
   loading: boolean;
 }
 
-const DiscriminatorTable: React.FC<DiscriminatorTableProps> = ({ data, loading }) => {
+const DiscriminatorTable: React.FC<DiscriminatorTableProps> = memo(({ data, loading }) => {
   if (loading) {
     return (
       <div className="table-container">
@@ -134,6 +134,8 @@ const DiscriminatorTable: React.FC<DiscriminatorTableProps> = ({ data, loading }
       </div>
     </div>
   );
-};
+});
+
+DiscriminatorTable.displayName = 'DiscriminatorTable';
 
 export default DiscriminatorTable;
